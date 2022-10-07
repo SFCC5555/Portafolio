@@ -11,38 +11,38 @@ function mostrarMenu() {
 const architectureList =[];
 
 architectureList.push({
-    image: "static/GALERIA/IMAGENES/CHICAZSFCC.png",
-    name: "zorra",
+    image: "./IMAGENES/viviendaDoctorVerdugoPlantas.png",
+    name: "Vivienda Doctor Verdugo",
 });
 
 architectureList.push({
-    image: "static/GALERIA/IMAGENES/CONCEPTARTWARGAMESFCC.png",
-    name: "WarWolf",
+    image: "./IMAGENES/viviendaJorgeBenavidesPlantas.png",
+    name: "Vivienda Jorge Benavides",
 });
 
 architectureList.push({
     image: "static/GALERIA/IMAGENES/GATO GAMER SFCC.png",
-    name: "gato",
+    name: "",
 });
 
 architectureList.push({
     image: "static/GALERIA/IMAGENES/SVSFCC.png",
-    name: "sfcc",
+    name: "",
 });
 
 architectureList.push({
     image: "static/GALERIA/IMAGENES/VIRGEN MARIA FINALSFCC.png",
-    name: "Virgen María",
+    name: "",
 });
 
 architectureList.push({
     image: "static/GALERIA/IMAGENES/PABLO ESCOBARSFCC.png" ,
-    name: "Pablo Escobar",
+    name: "",
 });
 
 architectureList.push({
     image: "static/GALERIA/IMAGENES/INOSUKE.png",
-    name: "Inosuke",
+    name: "",
 });
 
 
@@ -51,8 +51,8 @@ architectureList.push({
 const civilEngineeringList =[];
 
 civilEngineeringList.push({
-    image: "static/GALERIA/IMAGENES/57  Fenix ademan, logo 2.0.png",
-    contenido:"static/GALERIA/IMAGENES/STORYBOARD BONDED TRAILER SFCC.pdf",
+    image: "./IMAGENES/murosDeContencionSeñorMacancela.png",
+    contenido:"./IMAGENES/murosDeContencionSeñorMacancela.pdf",
     name: "Bonded",
 });
 

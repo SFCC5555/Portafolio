@@ -108,7 +108,7 @@ h3 {
 .containerArchitecture {
     display: grid;
     grid-template-columns: 1fr;
-    background-color: rgb(255, 183, 0);
+    background-color: var(--color4);
     margin: 20px;
     padding: 20px;
 }
@@ -116,7 +116,7 @@ h3 {
 .containerCivilEngineering {
     display: grid;
     grid-template-columns: 1fr;
-    background-color: red;
+    background-color: var(--color2);
     margin: 20px;
     padding: 20px;
 
@@ -155,30 +155,32 @@ img:hover {
 }
 
 .containerArchitecture > div {
-    border-bottom: 3px solid rgb(248, 163, 6);
+    border-bottom: 3px solid var(--color4);
 }
 
 .containerCivilEngineering > div {
-    border-bottom: 3px solid rgb(212, 11, 11);
+    border-bottom: 3px solid var(--color2);
 }
 
 .containerArchitecture img {
-    border:4px solid rgb(255, 183, 0);
+    border:4px solid var(--color4);
+    border-radius: 15px;
 }
 
 .containerArchitecture img:hover {
-    border:4px solid rgb(248, 163, 6);
-    background-color:rgb(248, 163, 6);
+    border:4px solid var(--color3);
+    background-color: var(--color3);
     border-radius: 5px;
 }
 
 
-.galeriaStoryBoards img {
-    border:4px solid red;
+.containerCivilEngineering img {
+    border:4px solid var(--color2);
+    border-radius: 15px;
 }
 
-.galeriaStoryBoards img:hover {
-    border:4px solid rgb(212, 11, 11);
-    background-color: rgb(212, 11, 11);
+.containerCivilEngineering img:hover {
+    border:4px solid var(--color5);
+    background-color: var(--color5);
     border-radius: 5px;
 }
