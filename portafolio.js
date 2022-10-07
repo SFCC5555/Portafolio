@@ -20,31 +20,6 @@ architectureList.push({
     name: "Vivienda Jorge Benavides",
 });
 
-architectureList.push({
-    image: "static/GALERIA/IMAGENES/GATO GAMER SFCC.png",
-    name: "",
-});
-
-architectureList.push({
-    image: "static/GALERIA/IMAGENES/SVSFCC.png",
-    name: "",
-});
-
-architectureList.push({
-    image: "static/GALERIA/IMAGENES/VIRGEN MARIA FINALSFCC.png",
-    name: "",
-});
-
-architectureList.push({
-    image: "static/GALERIA/IMAGENES/PABLO ESCOBARSFCC.png" ,
-    name: "",
-});
-
-architectureList.push({
-    image: "static/GALERIA/IMAGENES/INOSUKE.png",
-    name: "",
-});
-
 
 /*CONSTRUCTOR PROYECTOS DE INGENIERIA CIVIL*/
 
