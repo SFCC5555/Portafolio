@@ -1,0 +1,33 @@
+.subTitle {
+    font-size: 1.8rem;
+    letter-spacing: 15px;
+}
+
+
+.menuContainer {
+    width: 25%;
+    font-size: 1.7rem;
+}
+
+.containerArchitecture, .containerCivilEngineering {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 25px;
+    padding: 10px;
+}
+
+.containerArchitecture > div {
+
+    padding: 10px;
+}
+
+.containerCivilEngineering > div {
+
+    padding: 10px;
+}
+
+h3 {
+    letter-spacing: 15px;
+    font-size: 1.5rem;
+    font-weight: 10;
+    margin-left: 25px;
+}
