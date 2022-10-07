@@ -109,6 +109,7 @@ nav a:hover {
     color: var(--color3);
 }
 
+
 .mainScreen {
     display: flex;
     flex-direction:column;
