@@ -11,7 +11,7 @@ html {
 :root {
     --color1: #343C46;
     --color2: #505b67;
-    --color3: #65737e;
+    --color3: #65737ea2;
     --color4: #a7adbb;
     --color5: #c0c5ce;
     --color6: white; 
@@ -80,13 +80,14 @@ nav a {
     flex-direction:column;
     align-items: center;
     justify-content: space-around;
-    padding-top: 50px;
+    padding-top: 75px;
+    padding-bottom: 50px;
 }
 
 .subTitle {
-    font-size: 1.6rem;
+    font-size: 1rem;
     display:flex;
-    letter-spacing: 12px;
+    letter-spacing: 6px;
     cursor:pointer;
 }
 
