@@ -3,9 +3,14 @@ let ca=document.querySelector(".containerArchitecture");
 let cce=document.querySelector(".containerCivilEngineering");
 let body=document.querySelector("body");
 
+activeProject= "no"
+
 function mostrarMenu() {
-    projectToRender.classList.remove("projectContainer");
     m.classList.toggle("menuContainer")
+
+    if (activeProject=="yes") {
+        closeProject()
+    }
 }
 
 /*CONSTRUCTOR PROYECTOS ARQUITECTONICOS*/
@@ -56,18 +61,49 @@ architectureList.push({
 const civilEngineeringList =[];
 
 civilEngineeringList.push({
-    image: "./IMAGENES/murosDeContencionSeñorMacancela.png",
-    contenido:"./IMAGENES/murosDeContencionSeñorMacancela.pdf",
+    image: "./IMAGENES/murosDeContencionSenorMacancela.png",
     name: "Muros de Contención - Vivienda Señor Macancela",
+    content: [{image:"./IMAGENES/murosDeContencionSenorMacancela.png",
+                name:"Plano",
+                content:"./IMAGENES/murosDeContencionSenorMacancela.pdf",
+            },
+            {image:"./IMAGENES/memoriaTecnicaMurosSenorMacancela.png",
+                name:"Memoría Técnica",
+                content:"./IMAGENES/memoriaTecnicaMurosSenorMacancela.pdf",
+            }],
+
+});
+
+civilEngineeringList.push({
+    image: "./IMAGENES/camaraSepticaSeñorRivera.png",
+    name: "Cámara Séptica - Vivienda Señor Rivera",
+    content: [{image:"./IMAGENES/camaraSepticaSeñorRivera.png",
+                name:"Plano",
+                content:"./IMAGENES/camaraSepticaSeñorRivera.pdf",
+            },
+            {image:"./IMAGENES/memoriaTecnicaCamaraSepticaSeñorRivera.png",
+                name:"Memoría Técnica",
+                content:"./IMAGENES/memoriaTecnicaCamaraSepticaSeñorRivera.pdf",
+            }],
+
 });
 
 
-/*<div>
-    <a href="static/GALERIA/IMAGENES/CHICAZSFCC.png"  target="_BLANK">
-        <img src="static/GALERIA/IMAGENES/CHICAZSFCC.png" alt="zorra" width=75%/>
-    </a>
-</div>
-*/
+civilEngineeringList.push({
+    image: "./IMAGENES/camaraSepticaSenoraCochancela.png",
+    name: "Cámara Séptica - Vivienda Señora Cochancela",
+    content: [{image:"./IMAGENES/camaraSepticaSenoraCochancela.png",
+                name:"Plano",
+                content:"./IMAGENES/camaraSepticaSenoraCochancela.pdf",
+            },
+            {image:"./IMAGENES/memoriaTecnicaCamaraSepticaSenoraCochancela.png",
+                name:"Memoría Técnica",
+                content:"./IMAGENES/memoriaTecnicaCamaraSepticaSenoraCochancela.pdf",
+            }],
+
+});
+
+/*Funcion para renderizar proyectos de Arquitectura*/
 
 
 function renderArchitecture()
@@ -141,27 +177,75 @@ function renderArchitecture()
 
 }
 
+/*Funcion para renderizar proyectos de Ingenieria Civil*/
+
 function renderCivilEngineering()
 {
+    positionCounter=0
 
     for (civilEngineering of civilEngineeringList) {
         
-        contenedorCivilEngineering=document.createElement("div");
+        positionCounter++
 
+        contenedorCivilEngineering=document.createElement("div");
+        
         imagenCivilEngineering=document.createElement("img");
         imagenCivilEngineering.setAttribute("src",civilEngineering.image);
         imagenCivilEngineering.setAttribute("alt",civilEngineering.name);
         imagenCivilEngineering.setAttribute("width","75%");
+        imagenCivilEngineering.setAttribute("position",positionCounter + "cE");
 
         nombreCivilEngineering=document.createElement("p");
         nombreCivilEngineering.setAttribute("class","projectName")
         nombreCivilEngineering.innerText=civilEngineering.name;
-    
+        
         cce.appendChild(contenedorCivilEngineering);
         contenedorCivilEngineering.appendChild(imagenCivilEngineering);
         contenedorCivilEngineering.appendChild(nombreCivilEngineering);
-    }
 
+
+        p=document.createElement("section");
+        p.setAttribute("class","inactive");
+        p.setAttribute("id",positionCounter + "cE")
+        
+        c=document.createElement("div");
+        c.setAttribute("class","close");
+        c.innerText="x";
+        p.appendChild(c);
+
+        body.appendChild(p);
+
+        for (civilEngineeringProject of civilEngineering.content) {
+
+
+            
+            contenedorCivilEngineeringProject=document.createElement("div");
+            contenedorCivilEngineeringProject.setAttribute("class","projectDiv")
+
+            linkCivilEngineeringProject=document.createElement("a");
+            linkCivilEngineeringProject.setAttribute("href",civilEngineeringProject.content);
+            linkCivilEngineeringProject.setAttribute("target","_blank");
+            
+            imagenCivilEngineeringProject=document.createElement("img");
+            imagenCivilEngineeringProject.setAttribute("src",civilEngineeringProject.image);
+            imagenCivilEngineeringProject.setAttribute("alt",civilEngineeringProject.name);
+            imagenCivilEngineeringProject.setAttribute("width","85%");
+    
+            nombreCivilEngineeringProject=document.createElement("p");
+            nombreCivilEngineeringProject.setAttribute("class","projectName")
+            nombreCivilEngineeringProject.innerText=civilEngineeringProject.name;
+            
+            p.appendChild(contenedorCivilEngineeringProject);
+            contenedorCivilEngineeringProject.appendChild(linkCivilEngineeringProject);
+            contenedorCivilEngineeringProject.appendChild(nombreCivilEngineeringProject);
+
+            linkCivilEngineeringProject.appendChild(imagenCivilEngineeringProject);
+    
+        }
+
+        imagenCivilEngineering.addEventListener("click",renderProject);
+        c.addEventListener("click",closeProject);
+    }
 }
 
 renderArchitecture();
@@ -169,6 +253,8 @@ renderArchitecture();
 renderCivilEngineering();
 
 function renderProject(evento) {
+    
+    activeProject= "yes"
     
     m.classList.remove("menuContainer");
     
@@ -178,11 +264,11 @@ function renderProject(evento) {
     
     projectToRender.classList.toggle("projectContainer");
 
-    allImagenArchitecture=document.querySelectorAll("img");
+    allImagen=document.querySelectorAll("img");
 
-    for (imagenArchitecture of allImagenArchitecture) {
-        imagenArchitecture.removeEventListener("click",renderProject);
-    }    
+    for (imagen of allImagen) {
+        imagen.removeEventListener("click",renderProject);
+    }
 
 }
 
@@ -190,8 +276,8 @@ function closeProject() {
 
     projectToRender.classList.remove("projectContainer");
     
-    for (imagenArchitecture of allImagenArchitecture) {
-        imagenArchitecture.addEventListener("click",renderProject);
+    for (imagen of allImagen) {
+        imagen.addEventListener("click",renderProject);
     }
-
+    activeProject= "no"
 }
