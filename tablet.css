@@ -34,6 +34,7 @@ h3 {
 
 .projectContainer {
     grid-template-columns: repeat(2, 1fr);
+    height: 80%;
 }
 
 .projectContainer img {

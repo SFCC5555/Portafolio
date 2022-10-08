@@ -222,7 +222,6 @@ img:hover {
     position: absolute;
     background-color: var(--color5);
     width: 80%;
-    height: 80%;
     border-radius: 15px;
     top:12.5%;
     left: 10%;
@@ -239,6 +238,10 @@ img:hover {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+}
+
+.projectContainer a {
+    text-align: center;
 }
 
 .projectContainer img {

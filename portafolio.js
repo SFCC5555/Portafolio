@@ -21,13 +21,13 @@ architectureList.push({
             },
             {image:"./IMAGENES/viviendaDoctorVerdugoElevaciones.png",
                 name:"Plano Elevaciones",
-                content:"./IMAGENES/viviendaDoctorVerdugoPlantas.pdf",
+                content:"./IMAGENES/viviendaDoctorVerdugoElevaciones.pdf",
             }],
 });
 
 architectureList.push({
     image: "./IMAGENES/viviendaJorgeBenavidesPlantas.png",
-    name: "Vivienda Jorge Benavides",
+    name: "Vivienda Señor Benavides",
     content: [{image:"./IMAGENES/viviendaJorgeBenavidesPlantas.png",
                 name:"Plano Plantas",
                 content:"./IMAGENES/viviendaJorgeBenavidesPlantas.pdf",
@@ -66,7 +66,7 @@ function renderArchitecture()
         positionCounter++
 
         contenedorArchitecture=document.createElement("div");
-
+        
         imagenArchitecture=document.createElement("img");
         imagenArchitecture.setAttribute("src",architecture.image);
         imagenArchitecture.setAttribute("alt",architecture.name);
@@ -100,6 +100,10 @@ function renderArchitecture()
             contenedorArchitectureProject=document.createElement("div");
             contenedorArchitectureProject.setAttribute("class","projectDiv")
 
+            linkArchitectureProject=document.createElement("a");
+            linkArchitectureProject.setAttribute("href",architectureProject.content);
+            linkArchitectureProject.setAttribute("target","_blank");
+            
             imagenArchitectureProject=document.createElement("img");
             imagenArchitectureProject.setAttribute("src",architectureProject.image);
             imagenArchitectureProject.setAttribute("alt",architectureProject.name);
@@ -110,8 +114,10 @@ function renderArchitecture()
             nombreArchitectureProject.innerText=architectureProject.name;
             
             p.appendChild(contenedorArchitectureProject);
-            contenedorArchitectureProject.appendChild(imagenArchitectureProject);
+            contenedorArchitectureProject.appendChild(linkArchitectureProject);
             contenedorArchitectureProject.appendChild(nombreArchitectureProject);
+
+            linkArchitectureProject.appendChild(imagenArchitectureProject);
     
         }
 
@@ -164,10 +170,7 @@ function renderProject(evento) {
 
     for (imagenArchitecture of allImagenArchitecture) {
         imagenArchitecture.removeEventListener("click",renderProject);
-    }
-    
-
-
+    }    
 
 }
 
