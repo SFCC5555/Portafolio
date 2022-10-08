@@ -4,6 +4,7 @@ let cce=document.querySelector(".containerCivilEngineering");
 let body=document.querySelector("body");
 
 function mostrarMenu() {
+    projectToRender.classList.remove("projectContainer");
     m.classList.toggle("menuContainer")
 }
 
@@ -97,11 +98,12 @@ function renderArchitecture()
 
             
             contenedorArchitectureProject=document.createElement("div");
+            contenedorArchitectureProject.setAttribute("class","projectDiv")
 
             imagenArchitectureProject=document.createElement("img");
             imagenArchitectureProject.setAttribute("src",architectureProject.image);
             imagenArchitectureProject.setAttribute("alt",architectureProject.name);
-            imagenArchitectureProject.setAttribute("width","75%");
+            imagenArchitectureProject.setAttribute("width","85%");
     
             nombreArchitectureProject=document.createElement("p");
             nombreArchitectureProject.setAttribute("class","projectName")
@@ -150,17 +152,31 @@ renderCivilEngineering();
 
 function renderProject(evento) {
     
+    m.classList.remove("menuContainer");
+    
     eventPosition = evento.target.attributes.position.value;
     
     projectToRender = document.getElementById(eventPosition)
     
     projectToRender.classList.toggle("projectContainer");
 
+    allImagenArchitecture=document.querySelectorAll("img");
+
+    for (imagenArchitecture of allImagenArchitecture) {
+        imagenArchitecture.removeEventListener("click",renderProject);
+    }
+    
+
+
 
 }
 
 function closeProject() {
 
-    projectToRender.classList.toggle("projectContainer");
+    projectToRender.classList.remove("projectContainer");
+    
+    for (imagenArchitecture of allImagenArchitecture) {
+        imagenArchitecture.addEventListener("click",renderProject);
+    }
 
 }
