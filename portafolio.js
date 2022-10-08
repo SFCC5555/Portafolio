@@ -22,6 +22,14 @@ architectureList.push({
             {image:"./IMAGENES/viviendaDoctorVerdugoElevaciones.png",
                 name:"Plano Elevaciones",
                 content:"./IMAGENES/viviendaDoctorVerdugoElevaciones.pdf",
+            },
+            {image:"./IMAGENES/viviendaDoctorVerdugoHidrosanitario.png",
+            name:"Plano Instalaciones Hidrosanitarias",
+            content:"./IMAGENES/viviendaDoctorVerdugoHidrosanitario.pdf",
+            },
+            {image:"./IMAGENES/viviendaDoctorVerdugoAnteproyecto.png",
+            name:"Anteproyecto",
+            content:"./IMAGENES/viviendaDoctorVerdugoAnteproyecto.pdf",
             }],
 });
 
@@ -35,6 +43,10 @@ architectureList.push({
             {image:"./IMAGENES/viviendaJorgeBenavidesElevaciones.png",
                 name:"Plano Elevaciones",
                 content:"./IMAGENES/viviendaJorgeBenavidesElevaciones.pdf",
+            },
+            {image:"./IMAGENES/viviendaJorgeBenavidesHidrosanitario.png",
+            name:"Plano Instalaciones Hidrosanitarias",
+            content:"./IMAGENES/viviendaJorgeBenavidesHidrosanitario.pdf",
             }],
 });
 

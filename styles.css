@@ -271,8 +271,8 @@ img:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    top:15px;
-    right: 15px;
+    top:10px;
+    right: 10px;
     color: rgba(255, 255, 255, 0.788);
 }
 
