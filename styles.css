@@ -313,3 +313,25 @@ img:hover {
     color: var(--color6);
     background-color: #b6bac2;
 }
+
+#murosApp {
+    position: absolute;
+    position: fixed;
+    top:92.5%;
+    left: 91.5%;
+    background-color: var(--color6);
+    border: 2px solid var(--color7);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 15px;
+    color: var(--color1);
+    text-decoration: none;
+}
+
+#murosApp:hover {
+    color: teal;
+    border-color: teal;
+    cursor: pointer;
+}
