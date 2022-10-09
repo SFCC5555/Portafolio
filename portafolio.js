@@ -1,6 +1,7 @@
 let m=document.getElementById("menu");
 let ca=document.querySelector(".containerArchitecture");
 let cce=document.querySelector(".containerCivilEngineering");
+let cr=document.querySelector(".containerRenders");
 let body=document.querySelector("body");
 
 activeProject= "no"
@@ -99,6 +100,50 @@ civilEngineeringList.push({
             {image:"./IMAGENES/memoriaTecnicaCamaraSepticaSenoraCochancela.png",
                 name:"Memoría Técnica",
                 content:"./IMAGENES/memoriaTecnicaCamaraSepticaSenoraCochancela.pdf",
+            }],
+
+});
+
+/*CONSTRUCTOR PROYECTOS DE RENDERS*/
+
+const rendersList =[];
+
+rendersList.push({
+    image: "./IMAGENES/render1.jpg",
+    name: "Render Vivienda S",
+    content: [{image:"./IMAGENES/render1.jpg",
+                name:"Render Fachada",
+                content:"./IMAGENES/render1.jpg",
+            }],
+
+});
+
+rendersList.push({
+    image: "./IMAGENES/render2.jpg",
+    name: "Render Vivienda F",
+    content: [{image:"./IMAGENES/render2.jpg",
+                name:"Render Fachada",
+                content:"./IMAGENES/render2.jpg",
+            }],
+
+});
+
+rendersList.push({
+    image: "./IMAGENES/render3.jpg",
+    name: "Render Vivienda C",
+    content: [{image:"./IMAGENES/render3.jpg",
+                name:"Render Fachada",
+                content:"./IMAGENES/render3.jpg",
+            }],
+
+});
+
+rendersList.push({
+    image: "./IMAGENES/render4.jpg",
+    name: "Render Vivienda X",
+    content: [{image:"./IMAGENES/render4.jpg",
+                name:"Render Fachada",
+                content:"./IMAGENES/render4.jpg",
             }],
 
 });
@@ -248,9 +293,83 @@ function renderCivilEngineering()
     }
 }
 
+
+/*Funcion para renderizar proyectos de Renders*/
+
+function renderRenders()
+{
+    positionCounter=0
+
+    for (renders of rendersList) {
+        
+        positionCounter++
+
+        contenedorRenders=document.createElement("div");
+        
+        imagenRenders=document.createElement("img");
+        imagenRenders.setAttribute("src",renders.image);
+        imagenRenders.setAttribute("alt",renders.name);
+        imagenRenders.setAttribute("width","75%");
+        imagenRenders.setAttribute("position",positionCounter + "R");
+
+        nombreRenders=document.createElement("p");
+        nombreRenders.setAttribute("class","projectName")
+        nombreRenders.innerText=renders.name;
+        
+        cr.appendChild(contenedorRenders);
+        contenedorRenders.appendChild(imagenRenders);
+        contenedorRenders.appendChild(nombreRenders);
+
+
+        p=document.createElement("section");
+        p.setAttribute("class","inactive");
+        p.setAttribute("id",positionCounter + "R")
+        
+        c=document.createElement("div");
+        c.setAttribute("class","close");
+        c.innerText="x";
+        p.appendChild(c);
+
+        body.appendChild(p);
+
+        for (rendersProject of renders.content) {
+
+
+            
+            contenedorRendersProject=document.createElement("div");
+            contenedorRendersProject.setAttribute("class","projectDiv")
+
+            linkRendersProject=document.createElement("a");
+            linkRendersProject.setAttribute("href",rendersProject.content);
+            linkRendersProject.setAttribute("target","_blank");
+            
+            imagenRendersProject=document.createElement("img");
+            imagenRendersProject.setAttribute("src",rendersProject.image);
+            imagenRendersProject.setAttribute("alt",rendersProject.name);
+            imagenRendersProject.setAttribute("width","85%");
+    
+            nombreRendersProject=document.createElement("p");
+            nombreRendersProject.setAttribute("class","projectName")
+            nombreRendersProject.innerText=rendersProject.name;
+            
+            p.appendChild(contenedorRendersProject);
+            contenedorRendersProject.appendChild(linkRendersProject);
+            contenedorRendersProject.appendChild(nombreRendersProject);
+
+            linkRendersProject.appendChild(imagenRendersProject);
+    
+        }
+
+        imagenRenders.addEventListener("click",renderProject);
+        c.addEventListener("click",closeProject);
+    }
+}
+
 renderArchitecture();
 
 renderCivilEngineering();
+
+renderRenders();
 
 function renderProject(evento) {
     

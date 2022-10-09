@@ -9,7 +9,7 @@
     font-size: 1.7rem;
 }
 
-.containerArchitecture, .containerCivilEngineering {
+.containerArchitecture, .containerCivilEngineering, .containerRenders {
     grid-template-columns: repeat(2, 1fr);
     margin: 25px;
     padding: 10px;
@@ -21,6 +21,11 @@
 }
 
 .containerCivilEngineering > div {
+
+    padding: 10px;
+}
+
+.containerRenders > div {
 
     padding: 10px;
 }
