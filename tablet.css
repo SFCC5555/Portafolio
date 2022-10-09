@@ -45,3 +45,9 @@ h3 {
 .projectContainer img {
     width: 80%;
 }
+
+#murosApp {
+    font-size: 1.3rem;
+    top:92.5%;
+    left: 85%;
+}
